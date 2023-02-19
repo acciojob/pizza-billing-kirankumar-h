@@ -26,6 +26,7 @@ public class Pizza {
         this.isExtraCheeseAdded = false;
         this.isExtraToppingsAdded = false;
         this.isTakeAway = false;
+        this.isBillCreated = false;
 
         this.bill = "Base Price Of The Pizza: "+this.price+"\n";
     }
@@ -58,15 +59,15 @@ public class Pizza {
     public String getBill(){
         if(!isBillCreated) {
             if (isExtraCheeseAdded) {
-                this.bill += "Extra Cheese Added: 80" + "\n";
+                this.bill += "Extra Cheese Added: 80" +"\n";
             }
             if (isExtraToppingsAdded) {
-                this.bill += "Extra Toppings Added: " + this.toppings + "\n";
+                this.bill += "Extra Toppings Added: "+this.toppings +"\n";
             }
             if (isTakeAway) {
                 this.bill += "Paperbag Added: 20"+"\n";
             }
-            this.bill += "Total Price: " + this.price;
+            this.bill += "Total Price: " +this.price;
             this.isBillCreated = true;
             return this.bill;
         }
